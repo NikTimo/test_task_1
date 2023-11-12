@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-11-12T16:27:24Z"
+  labels:
+    app: hello-world
+  name: hello-world-service
+  namespace: default
+  resourceVersion: "12217"
+  uid: 3fb374d2-93c9-47ad-9a95-5a29b0e69af7
+spec:
+  clusterIP: 10.106.44.255
+  clusterIPs:
+  - 10.106.44.255
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30228
+    port: 32777
+    protocol: TCP
+    targetPort: 32777
+  selector:
+    app: hello-world
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
